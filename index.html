@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmácia Montrezor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div>
+        <h1>Farmacia montrezor</h1>
+        <hr>
+        <form action="farmacia.php" method="post">
+            <p>
+                <label for="a">Nome</label>
+                <input type="text" name="nome" id="nome" required>
+            </p>
+            <p>
+                <label for="a">Total de pedidos</label>
+                <input type="text" name="total" id="pedidos" required>
+            </p>
+            <p>
+                <label for="idade">Faixa etária:</label>
+                <br>
+                <input type="radio" name="idade" id="idade" value="0" required>Menor 50
+                <br>
+                <input type="radio" name="idade" id="idade" value="1">Entre 51 a 70
+                <br>
+                <input type="radio" name="idade" id="idade" value="2">Maior 70
+
+            </p>
+            <p>
+            <input type="checkbox" name="cartão" id="cartão">Cartão Fidelidade
+            </p>
+            <p>
+                <input type="submit" value="Calcular">
+                <input type="reset" value="Limpar">
+            </p>
+
+        </form>
+    </div>
+
+</body>
+
+</html>

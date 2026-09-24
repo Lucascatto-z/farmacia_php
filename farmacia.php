@@ -1,0 +1,55 @@
+<?php
+$nome = $_POST['nome'];
+$total = (float) $_POST['total'];
+$idade = (int) $_POST['idade'];
+
+if (isset($_POST['cartao'])) {
+
+    $cartao = "Sim";
+} else {
+    $cartao = "Não";
+}
+
+$descontoIdade = 0;
+$descontoCartao = 0;
+if ($idade == 0) {
+    $descontoIdade = 0;
+} else if ($idade == 1) {
+    $descontoIdade = 5;
+} else {
+    $descontoIdade = 7;
+}
+if ($cartao == "sim") {
+    $descontoCartao = 5;
+}
+$valorDescontoIdade = $total * ($descontoIdade / 100);
+$valorDescontoCartao = $total * ($descontoCartao / 100);
+$valorFinal = $total - $valorDescontoIdade - $valorDescontoCartao;
+
+?>
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmácia Montrezor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div>
+        <h1>Farmacia montrezor</h1>
+        <hr>
+        <h2>Cliente: <php echo $nome; ?></h2>
+        <h3>Total Pedido: R$ <?php echo number_format($total, 2,",",".") ?></h3>
+        <h4>Desconrto pela faixa etária: R$ <?php echo number_format($valorDescontoIdade,2,",",".") ?></h4>
+        <h4>Desconrto pelo cartão fidelidade: R$ <?php echo number_format($valorDescontoCartao,2,",",".") ?></h4>
+        <h1>Total a pagar: R$ <?php echo number_format($valorFinal,2,",",".") ?></h1>
+        <a href="index.html">Voltar</a>
+</div>
+
+</body>
+
+</head>
+        
